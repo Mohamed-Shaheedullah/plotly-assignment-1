@@ -14,8 +14,17 @@ app = Dash()
 app.layout = html.Div([
     dcc.Dropdown(df.brand.unique(),'Revlon', id='demo-dropdown'),
     html.Div(id='dd-output-container'),
-    dcc.RadioItems(options=my_group, id='radio-items')
+   dcc.RadioItems(options=[{"label": "Fenty Beauty's PRO FILT'R Foundation Only", "value": 0},
+                           {"label": "Make Up For Ever's Ultra HD Foundation Only", "value": 1},
+                           {"label": "US Best Sellers", "value": 2},
+                           {"label": "BIPOC-recommended Brands with BIPOC Founders", "value": 3},
+                           {"label": "BIPOC-recommended Brands with White Founders", "value": 4},
+                           {"label": "Nigerian Best Sellers", "value": 5},
+                           {"label": "Japanese Best Sellers", "value": 6},
+                           {"label": "Indian Best Sellers", "value": 7}]
+                           , id='radio-items', value=0),
 ])
+
 
 @callback(
     Output('dd-output-container', 'children'),
