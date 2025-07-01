@@ -5,6 +5,8 @@ import dash_ag_grid as dag
 
 df = pd.read_csv(r"C:\Users\conif\Documents\Projects\Python\python-data\shades.csv")
 
+
+
 app = Dash()
 
 
